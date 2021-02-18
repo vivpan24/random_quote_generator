@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Quotes App</title>
+    <style>
+        div {
+    text-align: center;
+}
+
+h1 {
+    font-size: 80px;
+    font-family: papyrus;
+}
+
+button {
+    width: 250px;
+    height: 80px;
+    background-color:#0ed377;
+    color: white;
+}
+
+p{
+    font-size: 30px;
+}
+
+button:hover{
+    background-color:#313392;
+}
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Quote of the Day</h1>
+        <p>Press the below button to view a random quote!</p>
+
+        <button onclick="generateQuote();">New Quote</button>
+        <p id="quoteOutput"></p>
+        <p id="authorOutput"></p>
+    </div>
+    <script>
+            const arrayOfQuotes = [
+                {'author': 'Mark Twain', 
+                'quote': 'Good decisions come from experience.Experience comes from making bad decisions.'
+                },
+                {'author': 'Napoleon Hill', 
+                'quote': 'Whatever the mind of man can conceive and believe,it can achieve.'
+                },
+                {'author': 'Frank Sinatra', 
+                'quote': 'The best revenge is massive success.'
+                },
+                {'author': 'Wayne Gretzy', 
+                'quote': 'You miss 100% of the shots you don\'t take.'
+                },
+                {'author': 'Albert Einstein', 
+                'quote': 'Strive not to be success,but rather to be of value.'
+                },
+                {'author': 'Florence Nightingale', 
+                'quote': 'I attriute my success to this:I never gave or took any excuse.'
+                },
+            ];
+
+            function generateQuote(){
+                const random = Number.parseInt(Math.random()*arrayOfQuotes.length + 1);
+                document.querySelector('#quoteOutput').textContent = `\"${arrayOfQuotes[random].quote}\"`;
+                document.querySelector('#authorOutput').textContent = `--${arrayOfQuotes[random].author}`;
+                
+            }
+
+    </script>
+</body>
+</html>
