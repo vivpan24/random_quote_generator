@@ -12,6 +12,7 @@ button {
     height: 80px;
     background-color:#0ed377;
     color: white;
+    cursor: pointer;
 }
 
 p{
